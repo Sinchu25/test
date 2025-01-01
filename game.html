@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guess the Number</title>
+    <style>
+        /* Add styles for the Start Game button */
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+    <script>
+        function playGame() {
+            // Generate a random number between 1 and 100
+            let randomNumber = Math.floor(Math.random() * 100) + 1;
+            let userGuess = null;
+
+            alert("Welcome to 'Guess the Number'! A number between 1 and 100 has been generated.");
+
+            while (userGuess !== randomNumber) {
+                userGuess = parseInt(prompt("Enter your guess (1-100):"));
+
+                if (isNaN(userGuess)) {
+                    alert("Please enter a valid number.");
+                } else if (userGuess < randomNumber) {
+                    alert("Too low! Try again.");
+                } else if (userGuess > randomNumber) {
+                    alert("Too high! Try again.");
+                } else {
+                    alert("Congratulations! You guessed the correct number: " + randomNumber);
+                }
+            }
+
+            // Ask if the user wants to play again
+            if (confirm("Do you want to play again?")) {
+                playGame(); // Restart the game
+            } else {
+                alert("Thanks for playing!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div style="text-align: center; margin-top: 50px;">
+        <button onclick="playGame()">Start Game</button>
+    </div>
+</body>
+</html>

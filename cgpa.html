@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student CGPA</title>
+    <script>
+        // Function to convert marks to CGPA
+        function calculateCGPA(marks) {
+            return (marks / 10).toFixed(2); // Assuming marks are out of 100
+        }
+
+        // Main function
+        function processStudents() {
+            // Array of student objects
+            const students = [
+                { name: "Alice", marks: 95 },
+                { name: "Bob", marks: 89 },
+                { name: "Charlie", marks: 92 },
+                { name: "David", marks: 85 },
+                { name: "Eva", marks: 98 }
+            ];
+
+            // Convert marks to CGPA using the map method
+            const studentsWithCGPA = students.map(student => {
+                return { name: student.name, CGPA: calculateCGPA(student.marks) };
+            });
+
+            // Filter students with CGPA 9 or higher
+            const highCGPAStudents = studentsWithCGPA.filter(student => student.CGPA >= 9);
+
+            // Calculate the total count of students with CGPA 9 or higher
+            const highCGPACount = highCGPAStudents.reduce((count, student) => count + 1, 0);
+
+            // Display the results
+            let result = "Students with CGPA 9 or higher:\n";
+            highCGPAStudents.forEach(student => {
+                result += `${student.name}: CGPA ${student.CGPA}\n`;
+            });
+            result += `\nTotal count of students with CGPA 9 or higher: ${highCGPACount}`;
+            alert(result);
+        }
+    </script>
+</head>
+<body>
+    <div style="text-align: center; margin-top: 50px;">
+        <button onclick="processStudents()" style="font-size: 18px; padding: 10px 20px;">Show Results</button>
+    </div>
+</body>
+</html>

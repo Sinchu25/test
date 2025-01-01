@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Page with JavaScript</title>
+    <style>
+        #colorChange { padding: 10px; background-color: lightgray; }
+        li { margin: 5px 0; list-style: none; }
+        .specific-class { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Interactive Page</h1>
+    
+    <ul>
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+    </ul>
+
+    <div>
+        <button onclick="this.innerText='Clicked!'">Button 1</button>
+        <button onclick="this.innerText='Clicked!'">Button 2</button>
+        <button onclick="this.innerText='Clicked!'">Button 3</button>
+    </div>
+
+    <div id="colorChange">
+        <p>Paragraph 1</p>
+        <p class="specific-class">Paragraph 2</p>
+        <p>Paragraph 3</p>
+    </div>
+
+    <script>
+        document.getElementById("colorChange").style.backgroundColor = "lightblue"; // Change background color
+        document.querySelectorAll("li").forEach(item => item.style.color = "blue"); // Change <li> color
+        document.querySelectorAll("p").forEach(p => p.style.fontSize = "20px"); // Increase <p> font size
+        document.querySelector(".specific-class").innerText = "This text has been changed!"; // Change text of first class
+    </script>
+</body>
+</html>
