@@ -1,0 +1,43 @@
+Measuring Execution Time of Code Blocks
+
+console.time('Execution Time');
+
+setTimeout(() => {
+  console.log('Simulating a task...');
+  console.timeEnd('Execution Time');
+}, 1000);
+
+
+Grouping Related Log Messages Hierarchically
+
+console.log('Starting process...');
+console.group('Initialization');
+console.log('Loading configurations...');
+console.log('Setting up dependencies...');
+console.groupEnd();
+console.log('Process complete.');
+
+Using Assertions to Conditionally Display Error Messages
+
+const value = 5;
+console.assert(value > 10, 'Value should be greater than 10');
+console.log('Execution continues...');
+
+
+Displaying Data in a Tabular Format
+
+const data = [
+  { Name: 'Alice', Age: 25, Role: 'Developer' },
+  { Name: 'Bob', Age: 30, Role: 'Designer' },
+  { Name: 'Charlie', Age: 35, Role: 'Manager' }
+];
+
+console.table(data);
+
+Logging Debugging Details for Analysis
+
+npm install debug
+const debug = require('debug')('app:module');
+debug('This is a debug message');
+DEBUG=app:module node script.js
+
