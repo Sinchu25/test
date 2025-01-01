@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Information Form</title>
+</head>
+<body>
+<h1>User Information Form</h1>
+<form>
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name"><br>
+
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email"><br>
+
+  <label for="age">Age:</label><br>
+  <input type="number" id="age" name="age"><br>
+
+  <label for="country">Country:</label><br>
+  <select id="country" name="country">
+    <option value="india">India</option>
+    </select><br>
+
+  <label for="password">Password:</label><br>
+  
+  
+  
+  <input type="password" id="password" name="password"><br>
+
+  <label for="resume">Resume:</label><br>
+  <input type="file" id="resume" name="resume"><br>
+
+  <label for="hobbies">Hobbies:</label><br>
+  <input type="checkbox" id="cricket" name="hobbies" value="cricket">
+  <label for="cricket"> Cricket</label><br>
+  <input type="checkbox" id="football" name="hobbies" value="football">
+  <label for="football"> Football</label><br>
+
+  <label for="gender">Gender:</label><br>
+  <input type="radio" id="male" name="gender" value="male">
+  <label for="male"> Male</label><br>
+  <input type="radio" id="female" name="gender" value="female">
+  <label for="female"> Female</label><br>
+
+  <label for="city">City:</label><br>
+  <select id="city" name="city">
+    <option value="--choose city--">--Choose city--</option>
+    </select><br>
+
+  <label for="address">Address:</label><br>
+  <textarea id="address" name="address"></textarea><br><br>
+
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
