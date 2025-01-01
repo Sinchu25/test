@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling Example</title>
+</head>
+<body>
+
+    <button id="changeButton">Click Me!</button>
+    <p id="successMessage"></p>
+    <input type="text" id="dynamicText" placeholder="Type something...">
+    <p id="displayText"></p>
+    <input type="password" id="password" placeholder="Enter Password">
+    <p id="passwordStrength"></p>
+
+    <script>
+        document.body.onclick = () => alert("You clicked the body!");
+        document.getElementById("changeButton").onclick = () => {
+            document.getElementById("changeButton").textContent = "You clicked the button!";
+            document.getElementById("successMessage").textContent = "Success!";
+        };
+        document.getElementById("dynamicText").oninput = () => document.getElementById("displayText").textContent = event.target.value;
+        document.getElementById("password").oninput = () => document.getElementById("passwordStrength").textContent = "Password Strength: " + (event.target.value.length < 6 ? "Weak" : event.target.value.length < 12 ? "Medium" : "Strong");
+    </script>
+
+</body>
+</html>
